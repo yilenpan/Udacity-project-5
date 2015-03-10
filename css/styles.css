@@ -1,0 +1,47 @@
+.navbar {
+    background-color: #333D47;
+    padding: 10px 0px 10px 0px;
+    margin:0px 0px 0px 0px;
+    border:0px;
+    border-radius: 0px;
+}
+.rating {
+    margin:0px;
+}
+.thumbnail{
+    text-align: center;
+}
+#nav {
+    color: white;
+}
+p{
+  margin-top: 5px;
+}
+li {
+    list-style-type: none;
+}
+html, body {
+    font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",Helvetica-,Arial,sans-serif;
+    margin:0px 0px 0px 0px;
+    height: 100%;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: -webkit-calc(100% - 60px);
+  margin: 0px 0px 0px 0px;
+}
+.row{
+  height:100%;
+}
+#sidemenu {
+  background-color:#232a31;
+  color:white;
+  height:100%;
+  overflow: auto;
+}
+
+#map-canvas{
+  height:100%;
+}
