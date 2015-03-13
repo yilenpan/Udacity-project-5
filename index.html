@@ -18,39 +18,43 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a id="nav" class="navbar-brand" href="/">
                         I'LL FIND IT!
                     </a>
                 </div>
-                <div class = "collapse navbar-collapse navHeaderCollapse ">
-                    <ul class="nav navbar-nav navbar-right nopadding">
-                        <form class="navbar-form navbar-right ">
-                            <div id="form" class="form-group">
-                                <label id='nav'>I'm looking for:</label>
-                                <input type="text" id='what' placeholder="Chinese, Thai, Burgers" class="form-control">
-                                <label id='nav'>Near:</label>
-                                <input type="text" id='address' placeholder="123 fake st." class="form-control">
-                                <input data-bind="click: search" id="search-btn" type="button" class="btn btn-primary" value="Search">
-                            </div>
-                        </form>
-                    </ul>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form id="search" class="nav navbar-nav navbar-form navbar-right ">
+                        <label id='nav'>I'm looking for:</label>
+                        <input type="text" id='what' placeholder="Chinese, Thai, Burgers" class="form-control">
+                        <label id='nav'>Near:</label>
+                        <input type="text" id='address' placeholder="123 fake st." class="form-control">
+                        <input data-bind="click: search" id="search-btn" type="button" class="btn btn-primary" value="Search">
+                    </form>
                 </div>
             </div>
         </nav>
         <div id="body" class="container">
             <div class="row">
-                <div id="map-canvas" class="col-md-9"></div>
+                <div id="map-canvas" class="col-xs-9"></div>
                 <div id="sidemenu" class="col-md-3">
-                    <div class="row">
-                        <div class="col-md-12"><h1>Found It!</h1></div>
-                        <div data-bind="foreach: listings" class="col-md-12">
-                            <div data-bind="event: { mouseover: show, mouseout: hide }" style="color:black;" class="thumbnail">
-                              <img data-bind="attr: { src: image_url }" src="" alt="image">
-                              <h4><a data-bind="attr: { href: url}, text: name"></a></h4>
-                              <img data-bind="attr: { src: rating_url }" class="rating" src="" alt="rating">
-                              <li data-bind="text: location"></li>
-                              <li data-bind="text: display_phone"></li>
-                              <p data-bind="text: snippet_text"></p>
+                    <div id="menu-contents" class="row">
+                        <div class="col-xs-12">
+                            <h1 align='center'>Found It!</h1>
+                            <div data-bind="foreach: listings" class="col-xs-12">
+                                <div data-bind="event: { mouseover: show, mouseout: hide }" style="color:black;" class="thumbnail">
+                                  <img data-bind="attr: { src: image_url }" src="" alt="image">
+                                  <h4><a data-bind="attr: { href: url}, text: name"></a></h4>
+                                  <img data-bind="attr: { src: rating_url }" class="rating" src="" alt="rating">
+                                  <li data-bind="text: location"></li>
+                                  <li data-bind="text: display_phone"></li>
+                                  <p data-bind="text: snippet_text"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,5 +64,23 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="bower_components/knockout/dist/knockout.js"></script>
         <script src="js/my.js"></script>
+        <script>
+            //If you click on the search
+            var openMenu = function() {
+                $("#sidemenu").animate({right:'0px'}, {queue: false, duration: 500});
+            };
+            //Manually toggling.
+            $("#sidemenu").click(function() {
+                if($("#sidemenu").css("right") == "-200px"){
+                    openMenu();
+                } else {
+                    $("#sidemenu").animate({right:'-200px'}, {queue: false, duration: 500})
+                }
+            });
+            //If you hit the search button, the results will open but not close.
+            $("#search-btn").click(function() {
+                openMenu();
+            });
+        </script>
     </body>
 </html>

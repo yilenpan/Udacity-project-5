@@ -23,6 +23,7 @@ var map;
 var markers = [];
 
 //make Markers functions - clear, show, add, make
+
 var clearMarkers = function() {
     setAllMap( null );
     markers = [];
@@ -174,6 +175,9 @@ var ViewModel = function() {
                 console.log(self.listings());
                 showMarkers();
             }
+        }).fail(function(e) {
+            console.log('something went wrong: ');
+            console.log(e.error());
         });
     };
 };
