@@ -154,7 +154,7 @@ var ViewModel = function() {
             consumerSecret : auth.consumerSecret,
             tokenSecret : auth.accessTokenSecret
         };
-        parameters = [];
+        var parameters = [];
         parameters.push(['term', terms]);
         parameters.push(['location', location]);
         parameters.push(['callback', 'cb']);
