@@ -11,7 +11,11 @@ This uses Bower, Knockout.js, jquery, bootstrap, Google Maps API and Yelp API.
 
 */
 
+//set whole script to be strict
+'use strict';
+
 //sets cache for true so Timestamp parameter isn't added to ajax query.
+
 $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
     if ( options.dataType == 'jsonp' || originalOptions.dataType == 'jsonp' ) {
         options.cache = true;
