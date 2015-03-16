@@ -97,7 +97,16 @@ var ViewModel = function() {
     var initialize = function() {
         var lat = 37.779277;
         var lng = -122.41927;
-        latlng = new google.maps.LatLng( lat, lng );//sets to San Francisco
+        //if geolocation is avail, set map to current position
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position){
+                lat = position.coords.latitude;
+                lng = position.coords.longitude;
+            }, function(error){
+                console.log("Error: " + error.message);
+            });
+        }
+        latlng = new google.maps.LatLng( lat, lng );//sets to San Francisco by default
         var mapOptions = {
           zoom: 12,
           center: latlng
