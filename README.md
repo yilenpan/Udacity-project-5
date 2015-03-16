@@ -3,7 +3,13 @@
 - Udacity Frontend Nanodegree Project 5, Neighborhood Map
   By Yilen Pan
 
-Insert a search term and an address, and it will return a list of search items
-puts them on the map and on the side menu.
+TO RUN:
 
-This uses Bower, Knockout.js, jquery, bootstrap, Google Maps API and Yelp API.
+Open index.html in your favorite browser. In your navigation bar,
+insert the term you'd like to search into the "I'm looking for:" box, and the address or city in the "Near:" box.
+
+Click search. A side menu will pop up with your search results.
+
+Put your mouse over the thumbnail and the location will bounce on the map.
+
+Click on the marker to see the name and address of the marker.

@@ -95,7 +95,9 @@ var ViewModel = function() {
 
     //loads map
     var initialize = function() {
-        latlng = new google.maps.LatLng( 37.779277, -122.41927 );//sets to San Francisco
+        var lat = 37.779277;
+        var lng = -122.41927;
+        latlng = new google.maps.LatLng( lat, lng );//sets to San Francisco
         var mapOptions = {
           zoom: 12,
           center: latlng
