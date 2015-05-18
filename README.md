@@ -5,7 +5,7 @@
 
 DEMO:
 
-(I'll find it!)[https://yilenpan.github.io/ill-find-it/]
+[I'll find it!](https://yilenpan.github.io/ill-find-it/)
 
 TO RUN:
 
