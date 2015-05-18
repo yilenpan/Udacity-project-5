@@ -3,6 +3,10 @@
 - Udacity Frontend Nanodegree Project 5, Neighborhood Map
   By Yilen Pan
 
+DEMO:
+
+(I'll find it!)[https://yilenpan.github.io/ill-find-it/]
+
 TO RUN:
 
 Open index.html in your favorite browser. In your navigation bar,
